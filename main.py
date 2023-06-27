@@ -24,6 +24,7 @@ cache = app.Table(
     default=None,
 )
 
+
 # Stream topology definition.
 @app.agent(chest_topic)
 async def process(sensor_data):
