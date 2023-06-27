@@ -9,20 +9,20 @@ faust -A <app_name> worker
 * `app_name` should be same with name of python file.
 * In this demo, you can execute faust stream application with the command as follows:
   ```shell
-    faust -A main worker
-    ```
+  faust -A main worker
+  ```
   
 ## State Store
 
 * faust uses RocksDB as memory cache for stateful stream processing.
 * This cache is represented as `Table` object.
   ```python
-    cache = app.Table(
-        "cache_name",
-        partitions=1,
-        default=None,
-    )
-    ```
+  cache = app.Table(
+      "cache_name",
+      partitions=1,
+      default=None,
+  )
+  ```
 * The value of `partitions` parameter should be as same as the number of partitions that consumer(application) subscribe.
   * For this demo, assume that `chest` topic has only one partition.
   * Accordingly, the `partition` parameter is just 1.
